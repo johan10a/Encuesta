@@ -3,25 +3,23 @@ class Encuesta:
         self.titulo = titulo
         self.fechaCreacion = fechaCreacion
         self.preguntas = []
-        self.grupo = None
+        self.respuestas = []
+        self.grupo = None  
 
     def agregar_pregunta(self, pregunta):
-        """Agrega una pregunta a la encuesta."""
         self.preguntas.append(pregunta)
+
+    def registrar_respuesta(self, respuesta):
+        self.respuestas.append(respuesta)
+
+    def obtener_respuestas(self):
+        """Devuelve la lista de respuestas registradas."""
+        return self.respuestas
 
     def aplicar_a_grupo(self, grupo):
         """Asigna la encuesta a un grupo de personas."""
         self.grupo = grupo
 
-    def personalizar_encuesta(self, nuevas_preguntas):
-        """Permite agregar o modificar preguntas en la encuesta."""
-        self.preguntas = nuevas_preguntas
-
-
 class Pregunta:
-    def __init__(self, texto, opciones=None):
+    def __init__(self, texto):
         self.texto = texto
-        self.opciones = opciones if opciones else []
-
-    def __str__(self):
-        return self.texto

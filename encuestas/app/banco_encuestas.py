@@ -1,18 +1,16 @@
 from encuesta import Encuesta, Pregunta
 
 def cargar_banco_encuestas():
-    """Cargar un banco de encuestas predefinidas."""
-    encuesta1 = Encuesta("Encuesta de Satisfacción", "2024-01-10")
-    encuesta1.agregar_pregunta(Pregunta("¿Cómo calificaría el servicio?"))
-    encuesta1.agregar_pregunta(Pregunta("¿Recomendaría nuestro producto?"))
-    encuesta1.agregar_pregunta(Pregunta("¿Qué mejorarías en nuestro servicio?"))
+    # Crear algunas encuestas predefinidas para simular un banco de encuestas
+    encuesta1 = Encuesta(titulo="Encuesta de Satisfacción", fechaCreacion="2024-01-10")
+    encuesta2 = Encuesta(titulo="Encuesta de Clima Laboral", fechaCreacion="2024-02-15")
+    encuesta3 = Encuesta(titulo="Encuesta de Marketing", fechaCreacion="2024-03-05")
 
-    encuesta2 = Encuesta("Encuesta de Clima Laboral", "2024-02-15")
-    encuesta2.agregar_pregunta(Pregunta("¿Cómo describiría el ambiente laboral?"))
-    encuesta2.agregar_pregunta(Pregunta("¿Se siente valorado en su lugar de trabajo?"))
-
-    encuesta3 = Encuesta("Encuesta de Marketing", "2024-03-05")
-    encuesta3.agregar_pregunta(Pregunta("¿Con qué frecuencia utiliza nuestro producto?"))
-    encuesta3.agregar_pregunta(Pregunta("¿Qué otras marcas utiliza con frecuencia?"))
+    # Agregar algunas preguntas
+    pregunta1 = Pregunta(texto="¿Cómo calificaría el servicio?")
+    pregunta2 = Pregunta(texto="¿Recomendaría el servicio?")
+    
+    encuesta1.agregar_pregunta(pregunta1)
+    encuesta1.agregar_pregunta(pregunta2)
 
     return [encuesta1, encuesta2, encuesta3]
